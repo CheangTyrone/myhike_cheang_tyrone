@@ -34,8 +34,8 @@
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
 
 </head>
 
@@ -44,34 +44,43 @@
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <!-- our own navbar goes here -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-info">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Tyrone Hikes</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            
-              <li class="nav-item">
-                <a class="nav-link" href="#">Something</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Something</a>
-              </li>
-              
-            </ul>
-            
-          </div>
-        </div>
-      </nav>
+    <nav id="navbarPlaceholder"></nav>
 
     <!-- the body of your page goes here -->
     <div class="container">
-        <h1><span id="hikeName"> this hike</span></h1>
-        <img class="hike-img responsive" src=""/>
-        <div id="details-go-here"></div>
+      <h1><span id="hikeName">this hike</span></h1>
+      <div class="position-relative">
+          <img class="hike-img responsive" src="" alt="Hike photo">
+          <button class="btn btn-primary position-absolute bottom-0 end-0 m-3" onclick="saveHikeDocumentIDAndRedirect()">Write Review</button>
+      </div>
+  </div>
+  <div class="container">
+    <h2>Reviews:</h2>
+    <div id="details-go-here"></div>
+    <!-- Here is the container for cards with horizontal scrolling -->
+    <div class="card-container">
+        <div id="reviewCardGroup" class="row row-cols-auto">
+            <!-- Add your card templates here -->
+        </div>
     </div>
+</div>
+
+<template id="reviewCardTemplate">
+    <div class="card bg-secondary">
+        <img class="card-img-top">
+        <div class="card-body bg-light">
+            <h5 class="title">placeholder</h5>
+            <p class="star-rating"></p>
+            <p class="time">placeholder</p>
+            <p class="level">placeholder</p>
+            <p class="season">placeholder</p>
+            <p class="scrambled">placeholder</p>
+            <p class="flooded">placeholder</p>
+            <br>
+            <p class="description">This card has supporting text below as a natural lead-in to additional content.</p>
+        </div>
+    </div>
+</template>
     <!-- stuff -->
 
     <!-- our own footer goes here-->
